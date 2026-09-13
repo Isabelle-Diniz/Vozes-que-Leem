@@ -1,0 +1,458 @@
+/* 1. Configuração Global - Usaremos Montserrat para a base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* 2. Títulos do Site e Menu */
+h1, h2, h3, nav a {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700; /* Deixa o título em negrito */
+}
+
+/* 3. O CORAÇÃO DO SITE: O texto das obras literárias */
+/* Vamos criar uma classe para o texto do conto e do cordel ser diferente */
+.texto-obra {
+    font-family: 'Lora', serif;
+    font-size: 1.2rem;
+    line-height: 1.8; /* Aumenta o espaço entre linhas para não cansar a vista */
+    color: #444;
+}
+
+/* Ajuste no Hero para o título ficar bem grande e imponente */
+.hero h2 {
+    font-size: 3.5rem;
+    letter-spacing: -1px; /* Deixa as letras mais juntinhas, estilo capa de revista */
+}
+body {
+    background-color: #f4f1ea; /* Fundo suave */
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #5d3a1a; /* Marrom terra */
+    color: #ffcc00;
+    padding: 20px 0;
+    text-align: center;
+    position: sticky;
+    top: 0;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 10px;
+}
+
+/* Estilo padrão dos links do menu */
+nav a {
+    transition: all 0.3s ease; /* Faz a mudança levar 0.3 segundos */
+    position: relative;
+    padding: 5px 10px;
+}
+
+nav a:hover {
+    color: #ffffff; /* Muda para branco no hover */
+    background-color: rgba(255, 204, 0, 0.2); 
+    border-radius: 5px;
+}
+
+/* Opcional: Uma linha que aparece embaixo */
+nav a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    display: block;
+    background: #ffcc00;
+    transition: width 0.3s;
+    bottom: 0;
+    left: 10px;
+}
+
+nav a:hover::after {
+    width: 80%; /* A linha cresce quando você passa o mouse */
+}
+
+/* Isso garante que o link seja sempre da mesma cor, mesmo após clicado */
+nav a, nav a:visited {
+    color: #ffcc00; /* Cor dourada/amarela */
+    text-decoration: none; /* Tira aquele sublinhado padrão */
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.hero {
+    height: 450px; /* Aumentei um pouco para a ilustração aparecer melhor */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('imgs/image.png');
+    background-size: cover; 
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #ffffff;
+    padding: 0 20px;
+}
+
+.hero-content h2 {
+    font-family: 'Special Elite', system-ui; /* A fonte nova aqui */
+    font-size: 3.5rem; 
+    color: #ffcc00; /* Dourado para destacar */
+    text-shadow: 4px 4px 15px rgba(0, 0, 0, 1); /* Sombra mais forte para parecer carimbo */
+    line-height: 1.2;
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* Espaço entre letras combina com máquina de escrever */
+}
+
+.hero-content p {
+    font-size: 1.4rem;
+    max-width: 600px;
+    text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.8);
+}
+
+section {
+    padding: 40px 20px;
+    max-width: 800px;
+    margin: auto;
+}
+
+
+/* Efeito ao passar o mouse no card */
+.card:hover {
+    transform: translateY(-5px); /* O card "sobe" 5 pixels */
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15); /* A sombra aumenta ao subir */
+}
+
+/* Deixando os títulos dos cards mais destacados */
+button {
+    margin-top: 15px;
+}
+
+.container-apresentacao p {
+    font-size: 1.15rem;
+    line-height: 1.7;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.container-apresentacao strong {
+    color: #5d3a1a;
+    border-bottom: 2px solid #ffcc00; /* Linha dourada charmosa embaixo do nome/curso */
+}
+
+/* Estilo da Página de Biografia */
+.container-bio {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    text-align: center;
+    background-color: #fff;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border-radius: 10px;
+}
+
+.foto-moldura {
+    width: 200px;
+    height: 200px;
+    margin: 20px auto;
+    border: 5px solid #ffcc00;
+    border-radius: 50%; /* Deixa a foto redondinha */
+    overflow: hidden;
+}
+
+.minha-foto {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-voltar {
+    display: inline-block;
+    margin-top: 30px;
+    color: #5d3a1a;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Estilo unificado para os links Isabelle e Vozes que Leem */
+.link-biografia, 
+.link-projeto {
+    color: #5d3a1a;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 2px 4px;
+    display: inline-block; /* ESSENCIAL: para a linha e o fundo não grudarem no texto */
+    transition: all 0.3s ease;
+    line-height: 1;
+}
+
+/* Animação de preenchimento ao passar o mouse */
+.link-biografia:hover, 
+.link-projeto:hover {
+    background-color: #ffcc00;
+    border-radius: 4px;
+    border-bottom-color: transparent; /* A linha "some" porque o fundo vira tudo amarelo */
+}
+
+/* Estilização da página Sobre */
+.container-sobre {
+    max-width: 850px;
+    margin: 60px auto;
+    padding: 0 20px;
+}
+
+.secao-texto {
+    margin-bottom: 30px; /* Espaço entre um bloco e outro */
+}
+
+.secao-texto h2 {
+    font-family: 'Special Elite', cursive; /* Fonte de máquina de escrever */
+    color: #5d3a1a;
+    font-size: 1.8rem;
+    margin-bottom: 15px;
+    border-left: 5px solid #ffcc00; /* Um detalhe dourado ao lado do título */
+    padding-left: 15px;
+}
+
+.texto-justificado {
+    text-align: justify;
+    line-height: 1.8; /* Espaçamento entre linhas para ficar robusto */
+    font-size: 1.15rem;
+    color: #333;
+}
+
+/* --- ESTILO DA PÁGINA INFANTIL --- */
+
+/* Configuração do Banner com a imagem das crianças */
+.banner-infantil {
+    height: 450px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('imgs/crianca.png'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid #ffcc00;
+}
+
+.banner-juvenil {
+    height: 450px;
+    background-image: linear-gradient(rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.2)), url('imgs/jovens.png'); 
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-bottom: 5px solid #ffcc00;
+}
+
+.banner-overlay h2 {
+    font-family: 'Special Elite', cursive;
+    font-size: clamp(3rem, 10vw, 5rem); /* Ajusta o tamanho da fonte conforme a tela */
+    color: #5d3a1a;
+    text-shadow: 3px 3px 0px #ffcc00;
+    letter-spacing: 5px;
+}
+
+/* Container e Grade de Obras */
+.container-obras {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.grade-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+}
+
+/* Estilo do Card (Livrinho) */
+.card-obra {
+    background: #fff;
+    padding: 20px;
+    border: 2px solid #ffcc00;
+    border-radius: 15px;
+    text-align: center;
+    transition: 0.3s;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+}
+
+.card-obra:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.capa-livro {
+    width: 100%;
+    height: 200px;
+    background-color: #f0f0f0;
+    margin-bottom: 15px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.capa-livro img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.btn-ler {
+    background-color: #5d3a1a;
+    color: white;
+    border: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn-ler:hover {
+    background-color: #ffcc00;
+    color: #5d3a1a;
+}
+
+.voltar-centro {
+    text-align: center;
+    margin-top: 50px;
+}
+
+/* ==========================================================
+   ESTILOS PARA A PÁGINA DE LEITURA (HISTORINHA)
+   ========================================================== */
+
+/* Container que segura todo o conteúdo da leitura */
+.pagina-leitura .container-leitura {
+    max-width: 850px;
+    margin: 40px auto;
+    padding: 30px;
+    background-color: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+/* Título da História */
+.titulo-conto {
+    font-family: 'Special Elite', cursive;
+    color: #5d3a1a;
+    text-align: center;
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* Imagem Única da Capa */
+.ilustracao-principal img {
+    width: 100%;
+    max-height: 500px;
+    object-fit: cover;
+    border-radius: 15px;
+    border: 5px solid #ffcc00;
+    margin-bottom: 30px;
+}
+
+/* Formatação do Texto (Fonte Lora para leitura confortável) */
+.texto-conto p {
+    font-family: 'Lora', serif;
+    font-size: 1.3rem;
+    line-height: 1.8;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+/* A Letra Capitular (Primeira letra grande) */
+.letra-capitular {
+    font-family: 'Special Elite', cursive;
+    float: left;
+    font-size: 80px;
+    line-height: 65px;
+    padding-right: 12px;
+    color: #5d3a1a;
+    font-weight: bold;
+}
+
+/* --- SEÇÃO DE VÍDEO --- */
+.secao-multimidia {
+    margin: 50px 0;
+    text-align: center;
+}
+
+.secao-multimidia h3 {
+    font-family: 'Montserrat', sans-serif;
+    color: #5d3a1a;
+    margin-bottom: 20px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%; /* Mantém a proporção 16:9 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    border: 3px solid #ffcc00;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+/* --- SEÇÃO DE DOWNLOAD DO PDF --- */
+.secao-download {
+    margin-top: 40px;
+    padding: 30px;
+    background-color: #fff3cd; /* Fundo amarelinho suave */
+    border-radius: 15px;
+    border: 2px dashed #5d3a1a;
+    text-align: center;
+}
+
+.btn-pdf {
+    display: inline-block;
+    background-color: #d9534f; /* Vermelho amigável */
+    color: white !important;
+    padding: 15px 30px;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 1.1rem;
+    margin-top: 15px;
+    transition: transform 0.2s, background 0.2s;
+}
+
+.btn-pdf:hover {
+    background-color: #c9302c;
+    transform: scale(1.05);
+}
+
+/* Botão Voltar centralizado */
+.voltar-centro {
+    margin-top: 40px;
+    text-align: center;
+}
+
+.btn-voltar {
+    color: #5d3a1a;
+    text-decoration: none;
+    font-weight: bold;
+    border-bottom: 2px solid transparent;
+}
+
+.btn-voltar:hover {
+    border-bottom: 2px solid #ffcc00;
+}
